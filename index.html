@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo productos - La casa de la papeleria </title>
+
+    <!--Hoja de estilo personalizada-->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--Estilo de Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <!--Estilo de Iconos Bootstrap-->
+    <link rel="stylesheet" href="font/bootstrap-icons.css">
+
+
+
+</head>
+
+<body>
+    <!--WhatsApp iniciar conversación-->
+    <a id="chatWhatsApp" target="_blank"
+        href="https://wa.me/51956396522?text=Hola!%20%2C%20Me%20interesa%20comprar%20un%20producto%20%20">
+        <img src="image/recursos/WhatsApp.svg" alt="Iniciar conversación por WhatsApp">
+    </a>
+    <!--Encabezado-->
+    <header class="text-center  text-dark  p-3">
+        <h1>La casa de la papeleria</h1>
+        <h2>Calidad y garantía</h2>
+
+    </header>
+
+    <!--Barra de navegación-->
+    <nav class="navbar navbar-expand-lg  bg-primary" data-bs-theme="dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comocomprar.html">Cómo comprar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacténos</a>
+                    </li>
+                </ul>
+                <div class="d-flex" role="search">
+                    <button class="btn btn-warning" data-bs-toggle="modal" 
+                    data-bs-target="#ventanaCarrito"><i class="bi bi-cart2"></i> Carrito</button>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!--Ventana Modal del Carrito-->
+    <div class="modal fade" id="ventanaCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <picture>
+                    <img id="imageCarritoVacio" class="img-fluid mx-auto d-block" src="image/recursos/carrito vacio.png" alt="carrito vacio">
+                </picture>
+              <p class="text-center">Actualmente usted no cuenta con ningún producto.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="limpiarCarrito()"><i class="bi bi-stars"></i>Limpiar</button>
+              <button type="button" class="btn btn-primary" ><i class="bi bi-cart-check-fill"></i>Cotizar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!--Notificación-->
+    <!--<div id="barNotificaciones">Venta de productos de papeleria - Catalogo 2023</div> -->
+
+    <!--Contenido principal-->
+    <main class="container text-center bg-danger-subtle ">
+
+        <!--Sesiones de contenido-->
+        <section id="catalogo" class="row py-5">
+
+            <!--Articulo 01-->
+            <article class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+                <picture>
+                    <img class="img-fluid" src="image/productos/cuaderno anillado.PNG" alt="Cuaderno anillado">
+                </picture>
+                <h4>Cuaderno anillado color morado A4 </h4>
+                <p>
+                    <span class="precioOriginal"> S/ 70.00</span> <span class="precioDescuento">-20%</span>
+                    <br><span class="precioFinal">S/ 56.00</span>
+                </p>
+                <button onclick="addCarrito(event)"class="btn btn-danger" ><i class="bi bi-plus-circle"></i>Agregar al carrito</button>
+            </article>
+
+            <!--Articulo 02-->
+            <article class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+                <picture>
+                    <img class="img-fluid" src="image/productos/lapicera estilo japones sencilla negro.PNG"
+                        alt="Lapicera">
+                </picture>
+                <h4>Lapicera estilo japonés color negro </h4>
+                <p>
+                    <span class="precioOriginal"> S/ 28.00</span> <span class="precioDescuento">-5%</span>
+                    <br><span class="precioFinal">S/ 26.60</span>
+                </p>
+                <button onclick="addCarrito(event)"class="btn btn-danger"><i class="bi bi-plus-circle"></i>Agregar al carrito</button>
+            </article>
+
+            <!--Articulo 03-->
+            <article class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+                <picture>
+                    <img class="img-fluid" src="image/productos/288710018_561223308996233_4442842322485792771_n.jpg"
+                        alt="Regla">
+                </picture>
+                <h4>Regla con diseño de gato </h4>
+                <p>
+                    <span class="precioOriginal" > S/ 6.50 </span> <span class="precioDescuento">-28%</span>
+                    <br><span class="precioFinal">S/ 4.68</span>
+                </p>
+                <button onclick="addCarrito(event)"class="btn btn-danger"><i class="bi bi-plus-circle"></i> Agregar al carrito</button>
+            </article>
+
+            <!--Articulo 04-->
+            <article class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+                <picture>
+                    <img class= "img-fluid" src="image/productos/set de escriturra eco friendly.PNG"
+                        alt="set de escritura ">
+                </picture>
+                <h4>Set de escritura eco-friendly </h4>
+                <p>
+                    <span class="precioOriginal"> S/ 50.00</span> <span class="precioDescuento">-15%</span>
+                    <br><span class="precioFinal">S/ 42.50</span>
+                </p>
+                <button onclick="addCarrito(event)"class="btn btn-danger"><i class="bi bi-plus-circle"></i>Agregar al carrito</button>
+            </article>
+            <!--Articulo 05-->
+            <article class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+                <picture>
+                    <img class="img-fluid" src="image/productos/plumon a base de agua 12 pzs.PNG" alt="plumon">
+                </picture>
+                <h4>Plumón a base de agua 12 pzs </h4>
+                <p>
+                    <span class="precioOriginal"> S/ 48.50</span> <span class="precioDescuento">-10%</span>
+                    <br><span class="precioFinal">S/ 43.65</span>
+                </p>
+                <button onclick="addCarrito(event)"class="btn btn-danger"><i class="bi bi-plus-circle"></i>Agregar al carrito</button>
+            </article>
+            <!--Articulo 06-->
+            <article class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+                <picture>
+                    <img class="img-fluid" src="image/productos/set de papeleria eco friendly.PNG"
+                        alt="set de papeleria">
+                </picture>
+                <h4>Set de papeleria eco-friendly </h4>
+                <p>
+                    <span class="precioOriginal"> S/ 88.00</span> <span class="precioDescuento">-20%</span>
+                    <br><span class="precioFinal">S/ 70.40</span>
+                </p>
+                <button onclick="addCarrito(event)"class="btn btn-danger"><i class="bi bi-plus-circle"></i>Agregar al carrito</button>
+            </article>
+            <!--Articulo 07-->
+            <article class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+                <picture>
+                    <img class="img-fluid" src="image/productos/216319476_330409272077639_8983731174552042886_n.jpg"
+                        alt="cintas decorativas">
+                </picture>
+                <h4>Paquete De Cintas Adhesivas Decorativa Multicolor 10 pzs </h4>
+                <p>
+                    <span class="precioOriginal">S/ 17.90</span> <span class="precioDescuento"> -12%</span>
+                    <br><span class="precioFinal">S/ 15.75</span>
+
+                </p>
+                <button onclick="addCarrito(event)"class="btn btn-danger"><i class="bi bi-plus-circle"></i>Agregar al carrito</button>
+            </article>
+            <!--Articulo 08-->
+            <article class="col-xs-12 col-sm-6 col-md-4 col-xl-3" >
+                <picture>
+                    <img class="img-fluid" src="image/productos/277537632_504448661340365_3382264582559464587_n.jpg"
+                        alt="cuaderno">
+                </picture>
+                <h4>Cuaderno cuadriculado A5 </h4>
+                <p>
+                    <span class="precioOriginal"> S/ 35.00</span> <span class="precioDescuento">-10%</span>
+                    <br><span class="precioFinal">S/ 31.50</span>
+                </p>
+                <button onclick="addCarrito(event)"class="btn btn-danger"><i class="bi bi-plus-circle"></i>Agregar al carrito</button>
+            </article>
+            <!--Articulo 09-->
+            <article class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+                <picture>
+                    <img class="img-fluid" src="image/productos/295681409_584136390038258_4494432533633074712_n.jpg"
+                        alt="stickers">
+                </picture>
+                <h4>Stickers de letras </h4>
+                <p>
+                    <span class="precioOriginal"> S/ 8.00</span> <span class="precioDescuento">-5%</span>
+                    <br><span class="precioFinal">S/ 7.60</span>
+                </p>
+                <button onclick="addCarrito(event)"class="btn btn-danger"><i class="bi bi-plus-circle"></i>Agregar al carrito</button>
+            </article>
+            <!--Articulo 10-->
+            <article class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+                <picture>
+                    <img class="img-fluid" src="image/productos/302263083_512115387581258_8578634204778651394_n.jpg"
+                        alt="post it">
+                </picture>
+                <h4>Post it 8 pzs </h4>
+                <p>
+                    <span class="precioOriginal"> S/ 15.00</span> <span class="precioDescuento">-3%</span>
+                    <br><span class="precioFinal">S/ 14.55</span>
+                </p>
+                <button onclick="addCarrito(event)"class="btn btn-danger"><i class="bi bi-plus-circle"></i>Agregar al carrito</button>
+            </article>
+            <!--Articulo 11-->
+            <article class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+                <picture>
+                    <img class="img-fluid" src="image/productos/311257850_552304443562352_981677109065765314_n.jpg"
+                        alt="set de papeleria">
+                </picture>
+                <h4>Set de papeleria </h4>
+                <p>
+                    <span class="precioOriginal"> S/ 50.00</span> <span class="precioDescuento">-15%</span>
+                    <br><span class="precioFinal">S/ 42.50</span>
+                </p>
+                <button onclick="addCarrito(event)"class="btn btn-danger"><i class="bi bi-plus-circle"></i>Agregar al carrito</button>
+            </article>
+            <!--Articulo 12-->
+            <article class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+                <picture>
+                    <img class="img-fluid" src="image/productos/313037818_409057328101368_8278221943120218532_n.jpg"
+                        alt="plumones">
+                </picture>
+                <h4>Plumones "Mildliner" 15 unidades</h4>
+                <p>
+                    <span class="precioOriginal"> S/ 120.00</span> <span class="precioDescuento">-5%</span>
+                    <br><span class="precioFinal">S/ 114.00</span>
+                </p>
+                <button onclick="addCarrito(event)" class="btn btn-danger"><i class="bi bi-plus-circle"></i>Agregar al carrito</button>
+            </article>
+        </section>
+    </main>
+
+    <!--Pie de página-->
+
+    <footer class="container-fluid bg-dark text-white p-2">
+        <div class="container p-0">
+            <p class="float-end">
+                <a href="#">Volver arriba</a>
+            </p>
+            <p>Creado por Naomi Castro - 2023</p>
+        </div>
+    </footer>
+    <!--JavaScript de Bootstrap-->
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Cargar JavaScript personalizado -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacténos - La casa de la papeleria </title>
+
+    <!-- Hoja de estilo personalizada -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Estilo de Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!--Estilo de Iconos Bootstrap-->
+    <link rel="stylesheet" href="font/bootstrap-icons.css">
+
+</head>
+
+<body>
+    <!--WhatsApp iniciar conversación-->
+    <a target="_blank"
+        href="https://wa.me/51956396522?text=Hola!%20%2C%20Me%20interesa%20comprar%20un%20producto%20%20">
+        <img id="chatWhatsApp" src="image/recursos/WhatsApp.svg" alt="Iniciar conversación por WhatsApp">
+    </a>
+
+
+    <!--Encabezado-->
+    <header class="text-center  text-dark p-3">
+        <h1>La casa de la papeleria</h1>
+        <h2>Calidad y garantía</h2>
+
+    </header>
+
+    <!--Barra de navegación-->
+    <nav class="navbar navbar-expand-lg  bg-primary" data-bs-theme="dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comocomprar.html">Cómo comprar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacténos</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ventanaCarrito"><i
+                        class="bi bi-cart2"></i> Carrito</button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+    <!--Ventana Modal del Carrito-->
+    <div class="modal fade" id="ventanaCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <picture>
+                    <img id="imageCarritoVacio" class="img-fluid mx-auto d-block" src="image/recursos/carrito vacio.png" alt="carrito vacio">
+                </picture>
+              <p class="text-center">Actualmente usted no cuenta con ningún producto.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="limpiarCarrito()"><i class="bi bi-stars"></i>Limpiar</button>
+              <button type="button" class="btn btn-primary" ><i class="bi bi-cart-check-fill"></i>Cotizar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!--Cuerpo principal-->
+    <main class="container text-center bg-danger-subtle">
+
+        <div class="row">
+
+            <!--Datos de contacto-->
+            <section id="ubicanos" class="col-xs-12 col-sm-12 col-md-6 col-lg-7 py-5 px-4">
+                <h3>Escríbenos ahora</h3>
+                <p>Av. Los Alamos de Punta Hermosa<br>
+                    Pachacamac - Lima - Perú
+                </p>
+                <p>Télefono: 01 680 9999 / 999 555 555</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1380.1864154293971!2d-77.04790679054719!3d-11.92201336373708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d04f023f0141%3A0xf6d82d0bf769c756!2sMinizool%C3%B3gico%20Club%20Sinchi%20Roca!5e0!3m2!1ses!2spe!4v1679537287496!5m2!1ses!2spe"
+                    width="100%" height="420px" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+
+            <!--Formulario de contacto-->
+            <section id="FormContacto" class="col-xs-12 col-sm-12 col-md-6 col-lg-5 py-5 px-4">
+                <!-- Formulario -->
+                <form action="contactoRegistro.html" method="post">
+
+                    <!-- Input / Entrada de valor -->
+                    <div class="mb-3">
+                        <label for="txtNombre">Ingrese su nombre</label>
+                        <input type="text" name="txtNombre" id="txtNombre" maxlength=50 required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtApellido">Ingrese su apellido</label>
+                        <input type="text" name="txtApellido" id="txtApellido" autocomplete="off" maxlength=54 required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtEmail">Ingrese su correo electrónico</label>
+                        <input type="email" name="txtEmail" id="txtEmail" autocomplete="off" maxlength=128 required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="numPhone">Ingrese su teléfono o celular</label>
+                        <input type="tel" name="numPhone" id="numPhone" maxlength="13" minlength="7">
+                    </div>
+
+                    <!-- Select / Selección de valor -->
+                    <div class="mb-3">
+                        <label for="txtAsunto">Escoja el asunto del mensaje</label>
+                        <select name="txtAsunto" id="txtAsunto" required>
+                            <option value="">Seleccione una opción...</option>
+                            <option value="comprarMayor">Comprar productos por mayor</option>
+                            <option value="consultaDevolucion">Consulta para devolución de producto</option>
+                            <option value="consultaGeneral">Hacer consulta general</option>
+                        </select>
+                    </div>
+
+                    <!-- TextArea / Cuerpo de texto -->
+
+                    <div class="mb-3">
+                        <label for="bodyDetalle">Ingrese su mensaje</label>
+                        <textarea name="bodyDetalle" id="bodyDetalle" cols="30" rows="8" required></textarea>
+                    </div>
+
+                    <!-- Input Checkbox -->
+                    <div class="mb-3">
+                        <input type="checkbox" name="bolAutorizo" id="bolAutorizo" required>
+                        <label for="bolAutorizo">Autorizo el envío de publicidad e información comercial</label>
+                    </div>
+
+                    <!-- Input Submit / Botón de enviar -->
+                    <div class="mb-3">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <!-- Pie de página -->
+    <footer class="container-fluid bg-dark text-white p-2">
+        <div class="container p-0">
+            <p class="float-end">
+                <a href="#">Volver arriba</a>
+            </p>
+            <p>Creado por Naomi Castro - 2023</p>
+        </div>
+    </footer>
+    <!--JavaScript de Bootstrap-->
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Cargar JavaScript personalizado -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

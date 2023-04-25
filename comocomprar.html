@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como comprar - La casa de la papeleria </title>
+
+    <!--Hoja de estilo personalizada-->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--Estilo de Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!--Estilo de Iconos Bootstrap-->
+    <link rel="stylesheet" href="font/bootstrap-icons.css">
+
+</head>
+
+<!--WhatsApp iniciar conversación-->
+<a target="_blank" href="https://wa.me/51956396522?text=Hola!%20%2C%20Me%20interesa%20comprar%20un%20producto%20%20">
+    <img id="chatWhatsApp" src="image/recursos/WhatsApp.svg" alt="Iniciar conversación por WhatsApp">
+</a>
+
+<body>
+    <!--Encabezado-->
+    <header class="text-center  text-dark p-3">
+        <h1>La casa de la papeleria</h1>
+        <h2>Calidad y garantía</h2>
+
+    </header>
+
+    <!--Barra de navegación-->
+    <nav class="navbar navbar-expand-lg bg-primary " data-bs-theme="dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comocomprar.html" >Cómo comprar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacténos</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ventanaCarrito"><i
+                     class="bi bi-cart2"></i> Carrito</button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+    <!--Ventana Modal del Carrito-->
+    <div class="modal fade" id="ventanaCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <picture>
+                    <img id="imageCarritoVacio" class="img-fluid mx-auto d-block" src="image/recursos/carrito vacio.png" alt="carrito vacio">
+                </picture>
+              <p class="text-center">Actualmente usted no cuenta con ningún producto.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="limpiarCarrito()"><i class="bi bi-stars"></i>Limpiar</button>
+              <button type="button" class="btn btn-primary" ><i class="bi bi-cart-check-fill"></i>Cotizar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--Cuerpo-->
+    <main  class="container text-center bg-danger-subtle p-2">
+        <section class="font-size: 1.5em">
+            <h4> Hay 2 formas de compras:</h4><br>
+            <p>
+                En la página web: El pago es con tarjeta de débito o crédito. Te pedirán tus datos para que podamos
+                hacer el envío a tu domicilio el cual se realiza el mismo día si la compra se hace antes de las 12pm
+                ,caso contrario se envía al día siguiente. El tiempo de entrega depende de la agencia Olva Courier y
+                demora entre 1 a 2 dias para Lima y para provincias de 2 a 5 días. Se te enviará un número de
+                seguimiento
+                para que puedas consultar el estado de tu envío en la web de Olva.
+            </p>
+            <p>
+                Al whatsapp: Puedes enviarnos el detalle de tu pedido al whatsapp 956396522. Te enviaremos el monto
+                a depositar y las cuentas bancarias para el depósito. El envío se coordina directamente entre la
+                tienda y el cliente.
+            </p>
+            <figure>
+                <img src="image/recursos/como_comprar.PNG"  width="320px" height="240"alt="como_comprar">
+            </figure>
+        </section>
+    </main>
+    <!-- Pie de página -->
+    <footer class="container-fluid bg-dark text-white p-2">
+        <div class="container p-0">
+            <p class="float-end">
+                <a href="#">Volver arriba</a>
+            </p>
+            <p>Creado por Naomi Castro - 2023</p>
+        </div>
+    </footer>
+    <!--JavaScript de Bootstrap-->
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Cargar JavaScript personalizado -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
